@@ -50,7 +50,9 @@ export default function Movies() {
         loader={<Loader />}
         endMessage={
           isSearch && !movieSearchList.length ? (
-            <p className="text-gray-500 text-center p-2 mt-20">No movies found</p>
+            <p className="text-gray-500 text-center p-2 mt-20">
+              No movies found
+            </p>
           ) : (
             <p className="text-gray-500 text-center p-2">No more movies</p>
           )

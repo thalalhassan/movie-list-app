@@ -14,7 +14,7 @@ export default function MovieCard(props) {
   return (
     <div>
       <img src={getPoster(data["poster-image"])} alt={data.name}></img>
-      <div className="pt-2 pb-4 text-white">{data.name}</div>
+      <div className="pt-2 pb-4 text-white truncate">{data.name}</div>
     </div>
   );
 }
