@@ -43,7 +43,7 @@ export default function Movies() {
   return (
     <div>
       <MovieListHeader />
-      <div className="bg-black h-screen">
+      <div className="bg-black min-h-screen">
       <InfiniteScroll
         dataLength={isSearch ? movieSearchList.length : movieList.length}
         next={getNextMoviesFromApi}
