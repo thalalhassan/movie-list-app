@@ -14,7 +14,7 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/movie-list-app">
       <ErrorBoundary>
         <Provider store={store}>
           <App />
