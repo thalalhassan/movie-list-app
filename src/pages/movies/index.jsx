@@ -43,6 +43,7 @@ export default function Movies() {
   return (
     <div>
       <MovieListHeader />
+      <div className="bg-black h-screen">
       <InfiniteScroll
         dataLength={isSearch ? movieSearchList.length : movieList.length}
         next={getNextMoviesFromApi}
@@ -50,15 +51,17 @@ export default function Movies() {
         loader={<Loader />}
         endMessage={
           isSearch && !movieSearchList.length ? (
-            <p className="bg-black text-gray-500 text-center p-2 mt-20">
+            <p className=" text-gray-500 text-center p-2 mt-20">
               No movies found
             </p>
           ) : (
-            <p className="bg-black text-gray-500 text-center p-2">No more movies</p>
+            <p className=" text-gray-500 text-center p-2">
+              No more movies
+            </p>
           )
         }
       >
-        <div className="bg-black md:grid-cols-4 lg:grid-cols-6 px-4 grid grid-cols-3 gap-4">
+        <div className=" md:grid-cols-4 lg:grid-cols-6 px-4 grid grid-cols-3 gap-4">
           {isSearch
             ? movieSearchList?.map((movie, i) => (
                 <MovieCard key={i} data={movie} />
@@ -66,6 +69,7 @@ export default function Movies() {
             : movieList?.map((movie, i) => <MovieCard key={i} data={movie} />)}
         </div>
       </InfiniteScroll>
+      </div>
     </div>
   );
 }
